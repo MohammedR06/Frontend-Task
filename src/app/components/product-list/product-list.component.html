@@ -1,0 +1,19 @@
+<div class="list" *ngIf="noData == false">
+  <ul>
+    <li>Name</li>
+    <li>Description</li>
+    <li>Quantity</li>
+    <li>Amount</li>
+  </ul>
+  <ul *ngFor="let product of products">
+    <li data-label="name">
+      <a href="/products/{{ product.id }}">{{ product.name }}</a>
+    </li>
+    <li data-label="quantity">{{ product.quantity }}</li>
+    <li data-label="amount">{{ product.amount }}</li>
+    <li data-label="description">
+      <p>{{ product.description }}</p>
+    </li>
+  </ul>
+</div>
+<h1 *ngIf="noData">No Products</h1>

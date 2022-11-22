@@ -1,0 +1,90 @@
+<div class="formbold-main-wrapper" *ngIf="noData == false">
+  <div class="formbold-form-wrapper">
+    <form [formGroup]="ordersData" (ngSubmit)="submit()">
+      <div class="formbold-mb-5">
+        <label for="name" class="formbold-form-label"> Customer Name</label>
+        <input
+          type="text"
+          name="customername"
+          id="customername"
+          placeholder="Customer Name"
+          class="formbold-form-input"
+          formControlName="customername"
+        />
+      </div>
+
+      <div class="formbold-mb-5">
+        <label for="number" class="formbold-form-label"> Purchased Date </label>
+        <input
+          type="text"
+          name="pdate"
+          id="pdate"
+          placeholder="Purchased Date"
+          class="formbold-form-input"
+          formControlName="pdate"
+        />
+      </div>
+
+      <div class="formbold-mb-5">
+        <label for="number" class="formbold-form-label"> Delivery date </label>
+        <input
+          type="text"
+          name="ddate"
+          id="ddate"
+          placeholder="Delivery date"
+          class="formbold-form-input"
+          formControlName="ddate"
+        />
+      </div>
+      <div class="formbold-mb-5">
+        <label for="subject" class="formbold-form-label"> Quantity </label>
+        <input
+          type="text"
+          name="quantity"
+          id="quantity"
+          placeholder="Enter your quantity"
+          class="formbold-form-input"
+          formControlName="quantity"
+        />
+      </div>
+      <div class="formbold-mb-5">
+        <label for="subject" class="formbold-form-label"> Product Name </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your Product name"
+          class="formbold-form-input"
+          formControlName="name"
+        />
+      </div>
+
+      <div>
+        <button [disabled]="ordersData.invalid" class="formbold-btn">
+          Update
+        </button>
+      </div>
+    </form>
+    <br />
+    <button
+      (click)="delete()"
+      [disabled]="ordersData.invalid"
+      class="formbold-btn"
+    >
+      Delete
+    </button>
+    <div *ngIf="noData == false">
+      <h1 style="margin: 10px 0">Total Products</h1>
+      <select name="products" class="form-control" style="width: 100%">
+        <option>Total Products</option>
+
+        <option value="{{ product.id }}" *ngFor="let product of products">
+          {{ product.id }} Name : {{ product.name }} Quantity :
+          {{ product.quantity }} Amount : {{ product.amount }} Description :
+          {{ product.description }}
+        </option>
+      </select>
+    </div>
+    <h1 *ngIf="noData">No Products</h1>
+  </div>
+</div>

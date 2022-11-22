@@ -1,0 +1,19 @@
+<div class="list" *ngIf="noData == false">
+  <ul>
+    <li>Customer Name</li>
+    <li>Purchased Date</li>
+    <li>Delivery date</li>
+    <li>Quantity</li>
+    <li>Product Name</li>
+  </ul>
+  <ul *ngFor="let order of order">
+    <li data-label="customername">
+      <a href="/orders/{{ order.id }}">{{ order.customername }}</a>
+    </li>
+    <li data-label="pdate">{{ order.pdate }}</li>
+    <li data-label="ddate">{{ order.ddate }}</li>
+    <li data-label="quantity">{{ order.quantity }}</li>
+    <li data-label="name">{{ order.name }}</li>
+  </ul>
+</div>
+<h1 *ngIf="noData">No orders</h1>

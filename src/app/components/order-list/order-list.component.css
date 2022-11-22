@@ -1,0 +1,30 @@
+.list ul:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.list ul:nth-child(even) {
+  background-color: #fff;
+}
+
+.list {
+  display: table;
+  margin: 1em;
+}
+
+.list ul {
+  display: table-row;
+}
+
+.list ul:first-child li {
+  background-color: #444;
+  color: #fff;
+}
+
+.list ul > li {
+  display: table-cell;
+  padding: 0.5em 1em;
+}
+
+.list ul {
+  cursor: pointer;
+}
