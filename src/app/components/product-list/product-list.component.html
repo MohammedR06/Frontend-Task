@@ -9,11 +9,11 @@
     <li data-label="name">
       <a href="/products/{{ product.id }}">{{ product.name }}</a>
     </li>
-    <li data-label="quantity">{{ product.quantity }}</li>
-    <li data-label="amount">{{ product.amount }}</li>
     <li data-label="description">
       <p>{{ product.description }}</p>
     </li>
+    <li data-label="quantity">{{ product.quantity }}</li>
+    <li data-label="amount">{{ product.amount }}</li>
   </ul>
 </div>
 <h1 *ngIf="noData">No Products</h1>
