@@ -16,7 +16,7 @@
       <div class="formbold-mb-5">
         <label for="number" class="formbold-form-label"> Purchased Date </label>
         <input
-          type="text"
+          type="date"
           name="pdate"
           id="pdate"
           placeholder="Purchased Date"
@@ -28,7 +28,7 @@
       <div class="formbold-mb-5">
         <label for="number" class="formbold-form-label"> Delivery date </label>
         <input
-          type="text"
+          type="date"
           name="ddate"
           id="ddate"
           placeholder="Delivery date"
@@ -48,15 +48,19 @@
         />
       </div>
       <div class="formbold-mb-5">
-        <label for="subject" class="formbold-form-label"> Product Name </label>
-        <input
-          type="text"
+        <label for="name" class="formbold-form-label"> Product Name </label>
+
+        <select
           name="name"
           id="name"
-          placeholder="Enter your Product name"
-          class="formbold-form-input"
           formControlName="name"
-        />
+          class="form-control"
+          style="width: 100%; background-color: white; color: black"
+        >
+          <option value="{{ order.name }}" *ngFor="let order of orders">
+            {{ order.name }}
+          </option>
+        </select>
       </div>
 
       <div>
@@ -73,18 +77,5 @@
     >
       Delete
     </button>
-    <div *ngIf="noData == false">
-      <h1 style="margin: 10px 0">Total Products</h1>
-      <select name="products" class="form-control" style="width: 100%">
-        <option>Total Products</option>
-
-        <option value="{{ product.id }}" *ngFor="let product of products">
-          {{ product.id }} Name : {{ product.name }} Quantity :
-          {{ product.quantity }} Amount : {{ product.amount }} Description :
-          {{ product.description }}
-        </option>
-      </select>
-    </div>
-    <h1 *ngIf="noData">No Products</h1>
   </div>
 </div>

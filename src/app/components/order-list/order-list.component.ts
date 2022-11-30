@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CrudOrderService } from 'src/app/service/crud-order.service';
 
 @Component({
@@ -10,7 +11,13 @@ export class OrderListComponent {
   order: any;
   noData = false;
 
-  constructor(private crudorderservice: CrudOrderService) {}
+  constructor(
+    private crudorderservice: CrudOrderService,
+    private router: Router
+  ) {}
+  onAdd() {
+    this.router.navigate(['orders/add']);
+  }
 
   ngOnInit(): void {
     const data = this.crudorderservice.getallOrder();

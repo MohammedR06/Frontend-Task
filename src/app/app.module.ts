@@ -10,9 +10,10 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { OrderUpdateComponent } from './components/order-update/order-update.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductDataComponent, OrderDataComponent, ProductListComponent, ProductUpdateComponent, OrderUpdateComponent, OrderListComponent],
+  declarations: [AppComponent, ProductDataComponent, OrderDataComponent, ProductListComponent, ProductUpdateComponent, OrderUpdateComponent, OrderListComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

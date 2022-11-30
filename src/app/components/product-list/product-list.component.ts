@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CrudService } from 'src/app/service/crud.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class ProductListComponent implements OnInit {
   products: any;
   noData = false;
 
-  constructor(private crudservice: CrudService) {}
+  constructor(private crudservice: CrudService, private router: Router) {}
+  onAdd() {
+    this.router.navigate(['products/add']);
+  }
 
   ngOnInit(): void {
     const data = this.crudservice.getAllProducts();

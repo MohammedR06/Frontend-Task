@@ -13,6 +13,7 @@ export class OrderUpdateComponent {
   id: any;
   noData = false;
   products: any;
+  orders: any;
 
   constructor(
     private crudorderservice: CrudOrderService,
@@ -41,6 +42,8 @@ export class OrderUpdateComponent {
     }
     const productdata = this.crudservice.getAllProducts();
     this.products = productdata;
+    const orderdata = this.crudorderservice.getallOrder();
+    this.orders = orderdata;
   }
 
   ordersData = new FormGroup({
