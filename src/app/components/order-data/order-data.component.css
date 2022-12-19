@@ -92,3 +92,9 @@ body {
     width: 50%;
   }
 }
+.form-control {
+  background-color: #6a64f1;
+  color: white;
+  margin: 10px 0;
+  padding: 15px 20px;
+}

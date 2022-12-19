@@ -48,15 +48,19 @@
         />
       </div>
       <div class="formbold-mb-5">
-        <label for="subject" class="formbold-form-label"> Product Name </label>
-        <input
-          type="text"
+        <label for="name" class="formbold-form-label"> Product Name </label>
+
+        <select
           name="name"
           id="name"
-          placeholder="Enter your Product name"
-          class="formbold-form-input"
           formControlName="name"
-        />
+          class="form-control"
+          style="width: 100%; background-color: white; color: black"
+        >
+          <option value="{{ order.name }}" *ngFor="let order of orders">
+            {{ order.name }}
+          </option>
+        </select>
       </div>
 
       <div>

@@ -9,6 +9,7 @@ import { CrudOrderService } from 'src/app/service/crud-order.service';
   styleUrls: ['./order-data.component.css'],
 })
 export class OrderDataComponent {
+  orders: any;
   constructor(
     private crudorderservice: CrudOrderService,
     private router: Router
@@ -20,6 +21,10 @@ export class OrderDataComponent {
     quantity: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
   });
+  ngOnInit(): void {
+    const orderdata = this.crudorderservice.getallOrder();
+    this.orders = orderdata;
+  }
 
   submit() {
     const data = this.ordersData.value;
